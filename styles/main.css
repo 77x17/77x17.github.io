@@ -9756,9 +9756,9 @@ body {
 
 /* Home Page Style */
 .ww-home-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/main-background.jpeg") no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../images/main-background.jpg") no-repeat center center;
     background-size: cover;
-    background-position: 50%;
+    background-position: 50% 5%;
     height: 100vh;
     min-height: 480px;
 }
@@ -10032,6 +10032,10 @@ body {
 
 .ww-section {
     padding: 100px 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; /* Giữ ảnh cố định khi cuộn */
 }
 
 .btn-primary {
@@ -10058,4 +10062,69 @@ body {
     bottom: 0;
     left: 0;
     margin: 0px 15px 15px 15px;
+    position:relative;
+}
+
+.thank-you-box {
+    background: rgba(0, 0, 0, 0.6); /* Màu xám đậm mờ */
+    padding: 20px; /* Tạo khoảng cách bên trong hộp */
+    border-radius: 10px; /* Bo góc hộp */
+    display: inline-block; /* Để hộp chỉ rộng vừa đủ nội dung */
+    max-width: 80%; /* Giới hạn chiều rộng */
+    margin: auto; /* Căn giữa */
+    text-align: center; /* Căn giữa nội dung */
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Nền mờ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000; /* Đảm bảo luôn ở trên cùng */
+}
+
+/* Nội dung popup */
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    animation: fadeIn 0.5s ease-in-out;
+    z-index: 10001; /* Chắc chắn nội dung popup nổi lên trên */
+}
+
+/* Nút bấm */
+.popup-content button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 5px; /* Thêm khoảng cách giữa các nút */
+}
+
+.popup-content button:hover {
+    background: #e60073;
+}
+
+/* Hiệu ứng fade in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
